@@ -92,7 +92,7 @@ export default [
                     endOfLine: 'lf', // 🛠️ Utilisation des fins de ligne `LF` (Unix) au lieu de `CRLF` (Windows)
                     useTabs: false, // 🛠️ Désactive les tabulations, force les espaces
                     printWidth: 200, // Empêche les retours à la ligne forcés
-  htmlWhitespaceSensitivity: "ignore" // Ignore l'espace dans HTML
+                    htmlWhitespaceSensitivity: 'ignore', // Ignore l'espace dans HTML
                 },
             ],
             indent: 'off', // ✅ Désactive `indent` pour éviter les conflits avec Prettier
