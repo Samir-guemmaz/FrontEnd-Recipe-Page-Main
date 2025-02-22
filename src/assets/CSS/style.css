@@ -1,0 +1,189 @@
+:root {
+    --Pierre100: hsl(30, 54%, 90%);
+    --Pierre150: hsl(30, 18%, 87%);
+    --Pierre600: hsl(30, 10%, 34%);
+    --Pierre900: hsl(24, 5%, 18%);
+    --Marron800: hsl(14, 45%, 36%);
+    --Rose800: hsl(332, 51%, 32%);
+    --Rose50: hsl(330, 100%, 98%);
+    --color: hsl(29, 53%, 90%);
+}
+
+@font-face {
+    font-family: Young-Serif;
+    src: url('../fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Tenue;
+    src: url('../fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+}
+
+* {
+    /* outline: 1px solid red; */
+    box-sizing: border-box;
+}
+
+html {
+    /* 62.5% de 16px = 10px */
+    font-size: 62.5%;
+}
+
+
+body {
+    background-color: var(--Pierre100);
+}
+
+.container {
+    font-size: 1.6rem;
+    font-family: Tenue;
+    font-weight: 400;
+    background-color: var(--Rose50);
+    color: var(--Pierre900);
+    border-radius: 5rem;
+    padding: 3rem 4rem;
+    width: 75rem;
+    max-width: 90%;
+    height: 100%;
+    margin: 3rem auto;
+}
+
+header h1,
+.recipe-information h2,
+.recipe-ingredient h2,
+.recipe-instruction h2,
+.recipe-nutrition h2 {
+    line-height: 1.2;
+}
+
+header {
+    height: 25%;
+    width: 100%;
+}
+
+header figure img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+header h1 {
+    font-family: Young-Serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    padding: 1.5rem 0;
+    color: var(--Pierre900);
+}
+
+header p {
+    padding: 1.5rem 0;
+}
+
+strong {
+    font-weight: 800;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+
+ul,
+ol,
+li {
+    line-height: 1.5;
+    padding-left: 2rem
+}
+
+ul li::before {
+    content: "\002022";
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+}
+
+.recipe-instruction ol {
+    list-style: none;
+    counter-reset: li
+}
+
+.recipe-instruction ol li {
+    counter-increment: li
+}
+
+.recipe-instruction ol li::before {
+    content: counter(li)".";
+    color: var(--Marron800);
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    font-weight: 800;
+}
+
+
+
+.recipe-information ul li::before {
+    color: var(--Rose800);
+}
+
+.recipe-instruction ul li::before {
+    color: var(--Marron800);
+}
+
+.recipe-information {
+    padding-left: 2.5rem;
+    background-color: var(--Rose50);
+}
+
+.recipe-information h2 {
+    color: var(--Rose800);
+    font-family: Young-Serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    padding: 1.5rem 0;
+}
+
+.recipe-ingredient h2,
+.recipe-instruction h2,
+.recipe-nutrition h2 {
+    color: var(--Marron800);
+    font-family: Young-serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    padding: 1.5rem 0;
+}
+
+table {
+    width: 90%;
+    line-height: 2;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 2px solid var(--Pierre150);
+}
+
+tr:last-child {
+    border-bottom: none;
+
+}
+
+td {
+    padding: 1.5rem;
+}
+
+td:nth-child(2) {
+    color: var(--Marron800);
+    font-weight: 800;
+}
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+}
