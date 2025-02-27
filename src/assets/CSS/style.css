@@ -1,11 +1,11 @@
 :root {
-    --Pierre100: hsl(30, 54%, 90%);
-    --Pierre150: hsl(30, 18%, 87%);
-    --Pierre600: hsl(30, 10%, 34%);
-    --Pierre900: hsl(24, 5%, 18%);
-    --Marron800: hsl(14, 45%, 36%);
-    --Rose800: hsl(332, 51%, 32%);
-    --Rose50: hsl(330, 100%, 98%);
+    --pierre100: hsl(30, 54%, 90%);
+    --pierre150: hsl(30, 18%, 87%);
+    --pierre600: hsl(30, 10%, 34%);
+    --pierre900: hsl(24, 5%, 18%);
+    --marron800: hsl(14, 45%, 36%);
+    --rose800: hsl(332, 51%, 32%);
+    --rose50: hsl(330, 100%, 98%);
     --color: hsl(29, 53%, 90%);
 }
 
@@ -33,22 +33,26 @@ html {
 
 
 body {
-    background-color: var(--Pierre100);
+    background-color: var(--pierre100);
 }
 
 .container {
     font-size: 1.6rem;
     font-family: Tenue;
     font-weight: 400;
-    background-color: var(--Rose50);
-    color: var(--Pierre900);
-    border-radius: 5rem;
+    background-color: var(--rose50);
+    color: var(--pierre900);
     padding: 3rem 4rem;
     width: 75rem;
-    max-width: 90%;
+    max-width: 100vw;
     height: 100%;
+
+    /* Valeurs par défaut (écran large) */
     margin: 3rem auto;
+    border-radius: 5rem;
 }
+
+
 
 header h1,
 .recipe-information h2,
@@ -59,13 +63,12 @@ header h1,
 }
 
 header {
-    height: 25%;
     width: 100%;
 }
 
 header figure img {
     width: 100%;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     border-radius: 2rem;
     object-fit: cover;
@@ -76,7 +79,7 @@ header h1 {
     font-weight: 700;
     font-size: 3.2rem;
     padding: 1.5rem 0;
-    color: var(--Pierre900);
+    color: var(--pierre900);
 }
 
 header p {
@@ -97,7 +100,7 @@ ul,
 ol,
 li {
     line-height: 1.5;
-    padding-left: 2rem
+    padding-left: 1.5rem
 }
 
 ul li::before {
@@ -118,7 +121,7 @@ ul li::before {
 
 .recipe-instruction ol li::before {
     content: counter(li)".";
-    color: var(--Marron800);
+    color: var(--marron800);
     display: inline-block;
     width: 1.5em;
     margin-left: -1.5em;
@@ -128,20 +131,20 @@ ul li::before {
 
 
 .recipe-information ul li::before {
-    color: var(--Rose800);
+    color: var(--rose800);
 }
 
 .recipe-instruction ul li::before {
-    color: var(--Marron800);
+    color: var(--marron800);
 }
 
 .recipe-information {
     padding-left: 2.5rem;
-    background-color: var(--Rose50);
+    background-color: var(--rose50);
 }
 
 .recipe-information h2 {
-    color: var(--Rose800);
+    color: var(--rose800);
     font-family: Young-Serif;
     font-weight: 400;
     font-size: 2.4rem;
@@ -151,8 +154,8 @@ ul li::before {
 .recipe-ingredient h2,
 .recipe-instruction h2,
 .recipe-nutrition h2 {
-    color: var(--Marron800);
-    font-family: Young-serif;
+    color: var(--marron800);
+    font-family: Young-Serif;
     font-weight: 400;
     font-size: 2.4rem;
     padding: 1.5rem 0;
@@ -166,7 +169,7 @@ table {
 }
 
 tr {
-    border-bottom: 2px solid var(--Pierre150);
+    border-bottom: 2px solid var(--pierre150);
 }
 
 tr:last-child {
@@ -178,18 +181,19 @@ td {
 }
 
 td:nth-child(2) {
-    color: var(--Marron800);
+    color: var(--marron800);
     font-weight: 800;
 }
 
 footer {
-    padding: 1.5rem;
+    padding: 0.1rem;
     text-align: center;
 }
 
 footer a {
     text-decoration: none;
-    color: #0074D9;
+    font-weight: 800;
+    color: #04294a;
     position: relative;
 }
 
@@ -200,7 +204,7 @@ footer a::before {
     right: 0;
     width: 0;
     height: 2px;
-    background-color: #0074D9;
+    background-color: #032a4c;
     transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -208,6 +212,24 @@ footer a::before {
     footer a:hover::before {
         left: 0;
         right: auto;
-        width: 100%;
+        width: auto;
+    }
+}
+
+/* 🟢 Mode mobile */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+}
+
+/* 🟠 Mode tablette*/
+@media (max-width: 1024px) {
+    .container {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
     }
 }
